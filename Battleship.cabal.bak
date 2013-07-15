@@ -13,6 +13,9 @@ Build-type:          Simple
 Executable:          battleship
 Main-is:             Battleship.hs
 
+library
+  exposed-modules:   Battleship
+
 Test-Suite test
   type:              detailed-0.9
   test-module:       Test
