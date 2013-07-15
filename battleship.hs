@@ -12,11 +12,14 @@ battleship1d f a b prevCenters slopes
 
 
 expectedYield :: Num n => (n -> n) -> n -> n -> n -> [n]
-expectedYield f a b highWater slopes = 
+expectedYield f a b high slopes = averageGain * slopesAbove
   where
     planarHeight = ((f a) + (f b)) / 2
-    minSlope = ((f b) - (f a)) / (b - a)
+    minSlope = slopeNecessaryToBeANewPeak f a b high
+    propAboveMinSlope = (length $ slopesAbove) / (length slopes)
+    averageGain = (sum $ map (- minSlope) slopes) / (length slopes)
+    slopesAbove = filter (>= minSlope) slopes
 
 -- Slope necessary to be a new peak
 slopeNecessaryToBeANewPeak :: Num n => (n -> n) -> n -> n -> n
-slopeNecessaryToBeANewPeak f a b high = (high - ((f a) + (f b))/2) / ((b - a) / 2)
+slopeNecessaryToBeANewPeak f a b highWater = (highWater - ((f a) + (f b))/2) / ((b - a) / 2)
