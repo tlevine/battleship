@@ -12,8 +12,8 @@ battleship1dInternal f prevA prevB high prevBounds prevSlopes prevCandidates
   | otherwise = battleship1dInternal f a b bounds slopes
   where
     bounds = (prevA,prevB):prevBounds
-    rise = 
-    run =
+    rise = 1
+    run = 1
     slopes = (rise/run):prevSlopes
     nextCandidates = candidates f prevA prevB high bounds slopes
 

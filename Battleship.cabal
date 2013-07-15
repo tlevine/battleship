@@ -7,7 +7,13 @@ License:             MIT
 License-file:        LICENSE
 Author:              Thomas Levine
 Maintainer:          Thomas Levine <occurrence@thomaslevine.com>
-Build-Depends:       base
+Build-Depends:       base, heap
+Build-type:          Simple
 
 Executable:          battleship
 Main-is:             Battleship.hs
+
+Test-Suite test
+  type:       detailed-1.0
+  test-module: Test
+  build-depends: base, Cabal >= 1.9.2
