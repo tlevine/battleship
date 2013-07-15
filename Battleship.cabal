@@ -14,6 +14,6 @@ Executable:          battleship
 Main-is:             Battleship.hs
 
 Test-Suite test
-  type:       detailed-1.0
-  test-module: Test
-  build-depends: base, Cabal >= 1.9.2
+  type:              detailed-0.9
+  test-module:       Test
+  build-depends:     base, Cabal >= 1.9.2
