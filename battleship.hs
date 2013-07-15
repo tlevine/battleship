@@ -1,10 +1,12 @@
-import Data.Function (on)
-import Data.List (sortBy)
+import qualified Data.Heap as H
 
-battleship1d :: Num n => (n -> n) -> n -> n -> [n] -> [n]
-battleship1d f prevA prevB high prevBounds prevSlopes prevCandidates
+battleship1d :: Num n => (n -> n) -> n -> n -> n
+battleship1d f a b = battleship1dInternal f a b [] [] []
+
+battleship1dInternal :: Num n => (n -> n) -> n -> n -> [n] -> [n]
+battleship1dInternal f prevA prevB high prevBounds prevSlopes prevCandidates
   | nextExpectedYield < 10 = high
-  | otherwise = battleship1d f a b bounds slopes
+  | otherwise = battleship1dInternal f a b bounds slopes
   where
     bounds = (prevA,prevB):prevBounds
     slopes = ():prevSlopes
