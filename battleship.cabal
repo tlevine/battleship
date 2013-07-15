@@ -23,5 +23,5 @@ library
 
 Test-Suite test
   type:              detailed-0.9
-  test-module:       Test
+  test-module:       Test.ExpectedYield
   build-depends:     base, Cabal >= 1.8
