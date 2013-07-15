@@ -1,0 +1,13 @@
+Name:                battleship
+Version:             0.0
+Synopsis:            Generalized binary search
+Description:         An implementation of Anthony's battleship algorithm
+                     for function maximization
+License:             MIT
+License-file:        LICENSE
+Author:              Thomas Levine
+Maintainer:          Thomas Levine <occurrence@thomaslevine.com>
+Build-Depends:       base
+
+Executable:          battleship
+Main-is:             Battleship.hs
