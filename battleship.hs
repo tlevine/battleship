@@ -1,15 +1,15 @@
+import Data.Function (on)
+import Data.List (sortBy)
+
 battleship1d :: Num n => (n -> n) -> n -> n -> n -> n
-battleship1d f a b prevCenters slopes
+battleship1d f a b prevBounds prevSlopes
   | distanceToCenter < 0.01 = f $ head prevCenters
-  | otherwise = maximum $ map (\c -> battleship1d f a b centers slopes
+  | otherwise = battleship1d f nextA nextB bounds slopes
   where
-    center = ((a + b) / 2)
-    centers = center:prevCenters
-    expectedPlanar = ((f a) + (f b)) / 2
-    distanceToCenter = (b - a) / 2
-
--- battleship f 3 5 []
-
+    bounds = (a,b):prevBounds
+    slopes = ():prevSlopes
+    expectedYields = map bounds (\(a,b) -> expectedYield f a b high slopes)
+    ((nextA, nextB), _):moreCandidates = sortBy (compare `on` snd) $ zip bounds expectedYields
 
 expectedYield :: Num n => (n -> n) -> n -> n -> n -> [n]
 expectedYield f a b high slopes = averageGain * slopesAbove
