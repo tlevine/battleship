@@ -1,7 +1,7 @@
--- battleship func bottom top
-
-
 -- [[pi/2],[5 * pi/2]] == battleship sin 2 6
+-- battleship func bottom top
+module Test.ExpectedYield ( tests ) where
+import Distribution.TestSuite
 
-main = do
-  putStrLn "a"
+tests :: [Test]
+tests = []

@@ -1,3 +1,5 @@
+module Math.Battleship (battleship1d) where
+
 import qualified Data.Heap as H
 
 type Candidates n = H.MaxPrioHeap n (n, n, Maybe n)
