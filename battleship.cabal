@@ -1,0 +1,22 @@
+name:                battleship
+version:             0.0.0
+synopsis:            An implementation of Anthony's battleship
+                     algorithm for function maximization
+homepage:            http://thomaslevine.com
+license:             MIT
+license-file:        LICENSE
+author:              Thomas Levine
+maintainer:          occurrence@thomaslevine.com
+category:            Math
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  -- Modules exported by the library.
+  exposed-modules:     Battleship, Test
+  
+  -- Modules included in this library but not exported.
+  -- other-modules:       
+  
+  -- Other library packages from which modules are imported.
+  build-depends:       base ==4.6.*, heap ==1.0.*
