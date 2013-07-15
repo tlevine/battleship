@@ -13,10 +13,15 @@ cabal-version:       >=1.8
 
 library
   -- Modules exported by the library.
-  exposed-modules:     Battleship, Test
+  exposed-modules:     Battleship
   
   -- Modules included in this library but not exported.
   -- other-modules:       
   
   -- Other library packages from which modules are imported.
   build-depends:       base ==4.6.*, heap ==1.0.*
+
+Test-Suite test
+  type:              detailed-0.9
+  test-module:       Test
+  build-depends:     base, Cabal >= 1.8

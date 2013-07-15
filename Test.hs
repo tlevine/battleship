@@ -2,3 +2,6 @@
 
 
 -- [[pi/2],[5 * pi/2]] == battleship sin 2 6
+
+main = do
+  putStrLn "a"
