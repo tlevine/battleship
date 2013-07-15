@@ -5,11 +5,14 @@ battleship1d :: Num n => (n -> n) -> n -> n -> n -> n
 battleship1d f a b prevBounds prevSlopes
   | distanceToCenter < 0.01 = f $ head prevCenters
   | otherwise = battleship1d f nextA nextB bounds slopes
+
+
+candidates :: Num n => (n -> n) -> n -> n -> n -> n
+candidates f a b prevBounds prevSlopes = sortBy (compare `on` snd) $ zip bounds expectedYields
   where
     bounds = (a,b):prevBounds
     slopes = ():prevSlopes
     expectedYields = map bounds (\(a,b) -> expectedYield f a b high slopes)
-    ((nextA, nextB), _):moreCandidates = sortBy (compare `on` snd) $ zip bounds expectedYields
 
 expectedYield :: Num n => (n -> n) -> n -> n -> n -> [n]
 expectedYield f a b high slopes = averageGain * slopesAbove
