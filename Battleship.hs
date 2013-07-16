@@ -22,8 +22,11 @@ battleship1dInternal f prevA prevB high prevBounds prevSlopes prevCandidates
 
 candidates :: Num n => (n -> n) -> n -> n -> [n] -> [n] -> Candidates n -> Candidates n
 candidates f a b high bounds slopes prevCandidates = 
+  | H.isempty prevCandidates = 
+  | otherwise = 
   where
     expectedYields = map bounds (\(a,b) -> expectedYield f a b high slopes)
+    newCandidates = 
 
 expectedYield :: Num n => (n -> n) -> n -> n -> n -> [n]
 expectedYield f a b high slopes = averageGain * slopesAbove
