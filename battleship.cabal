@@ -21,7 +21,7 @@ library
   -- Other library packages from which modules are imported.
   build-depends:       base ==4.6.*, heap ==1.0.*
 
-Test-Suite test
-  type:              detailed-0.9
-  test-module:       Test.ExpectedYield
-  build-depends:     base, Cabal >= 1.8
+-- Test-Suite test
+--  type:              detailed-0.9
+--  test-module:       Test.ExpectedYield
+--  build-depends:     base, Cabal >= 1.8
